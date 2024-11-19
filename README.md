@@ -1,16 +1,20 @@
-# login
+# SCREENSHOT
 
-A new Flutter project.
+![image](https://github.com/user-attachments/assets/409cb2b6-1c79-48d5-a107-64f44391a684)
+![image](https://github.com/user-attachments/assets/9ea0527e-5c39-486d-ad66-cbeaca6ecfe6)
+![image](https://github.com/user-attachments/assets/c0dd7a6c-5c8f-4ffc-93b4-1dd9d5df2363)
+![image](https://github.com/user-attachments/assets/2dac81a5-63f9-41f8-a0f2-ed50cf12c799)
 
-## Getting Started
+## Get Started
+1. Menyimpan username dari pengguna, disini kita mengambil dari input pada textbox usernameController. Disini kita menggunakan library dari plugin SharedPreferences.
+  void _saveUsername() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString('username', _usernameController.text);
+  }
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+2. Pada halaman login, disini kita memanggil username dari pengguna yg sudah disimpan sebelumnya.
+   void _loadUsername() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    namauser = prefs.getString('username');
+    setState(() {});
+  }
