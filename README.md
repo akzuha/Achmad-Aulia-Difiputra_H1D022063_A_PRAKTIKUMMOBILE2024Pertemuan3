@@ -8,13 +8,13 @@
 ## Get Started
 1. Menyimpan username dari pengguna, disini kita mengambil dari input pada textbox usernameController. Disini kita menggunakan library dari plugin SharedPreferences.<br/>
   void _saveUsername() async {<br/>
-    SharedPreferences prefs = await SharedPreferences.getInstance();<br/>
-    prefs.setString('username', _usernameController.text);<br/>
+    &nbsp;SharedPreferences prefs = await SharedPreferences.getInstance();<br/>
+    &nbsp;prefs.setString('username', _usernameController.text);<br/>
   }<br/>
 
 2. Pada halaman login, disini kita memanggil username dari pengguna yg sudah disimpan sebelumnya.<br/>
    void _loadUsername() async {<br/>
-    SharedPreferences prefs = await SharedPreferences.getInstance();<br/>
-    namauser = prefs.getString('username');<br/>
-    setState(() {});<br/>
+    &nbsp;SharedPreferences prefs = await SharedPreferences.getInstance();<br/>
+    &nbsp;namauser = prefs.getString('username');<br/>
+    &nbsp;setState(() {});<br/>
   }<br/>
